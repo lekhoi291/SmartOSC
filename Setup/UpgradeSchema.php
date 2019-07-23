@@ -174,5 +174,23 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $setup->getConnection()->createTable($table);
 
         }
+
+        if (version_compare($context->getVersion(), "1.0.2", "<")) {
+            $connection = $setup->getConnection();
+
+            /**
+             * Modify POST table
+             */
+            $connection->addColumn(
+                $setup->getTable($postTable),
+                'product_ids',
+                [
+                    'type' => \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    'length' => 255,
+                    'comment' => 'Product related id',
+                    'after' => 'category_ids',
+                ]
+            );
+        }
     }
 }

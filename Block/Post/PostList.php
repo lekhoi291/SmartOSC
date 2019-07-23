@@ -7,7 +7,7 @@ use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Api\SortOrderBuilder;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\View\Element\Template;
-use Magento\Tests\NamingConvention\true\false;
+//use Magento\Tests\NamingConvention\true\false;
 use SmartOSC\Blog\Api\PostRepositoryInterface;
 use SmartOSC\Blog\Helper\Data as BlogHelperData;
 use SmartOSC\Blog\Model\Post;
@@ -139,15 +139,9 @@ class PostList extends Template implements IdentityInterface
                     return true;
                 }
             }
+        }else{
+            return true;
         }
-
-//        #case blog/index/index/
-//        if(check module blog,index){
-//            //check
-//            return true;
-//        }
-
-        return false;
     }
 
     /**
