@@ -1,0 +1,16 @@
+<?php
+/** @var $block \SmartOSC\Blog\Block\Category\CategoryList */ ?>
+
+<?php /** @var $category \SmartOSC\Blog\Api\Data\CategoryInterface */ ?>
+
+<div class="featured-post-sidebar">
+    <div class="featured-post-sidebar-title">
+        <h3><strong><?php echo $block->escapeHtml(__('Categories')) ?></strong></h3>
+    </div>
+
+    <div class="sidebar-category-list">
+        <?php foreach ($block->getCategories() as $category): ?>
+            <p><a href="<?php echo $block->getCategoryUrl($category->getCategoryId()) ?>"><?php echo $category->getName() ?></a></p>
+        <?php endforeach; ?>
+    </div>
+</div>

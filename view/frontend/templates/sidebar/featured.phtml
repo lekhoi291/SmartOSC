@@ -1,0 +1,27 @@
+<?php
+/** @var $block \SmartOSC\Blog\Block\Post\Featured */ ?>
+
+<div class="featured-post-sidebar">
+    <div class="featured-post-sidebar-title">
+        <h3 style="margin:0 0 10px 0;"><strong><?php echo $block->escapeHtml(__('Feature Posts')) ?></strong></h3>
+    </div>
+
+    <?php /** @var \SmartOSC\Blog\Model\Post $post */ ?>
+    <?php foreach ($block->getFeaturedPost() as $post): ?>
+
+    <div class="featured-sidebar-image">
+        <a href="<?php echo $post->getUrlKey(); ?>">
+            <img src="<?php echo $block->getMediaUrl().$post->getImage(); ?>" />
+        </a>
+    </div>
+    <div class="featured-sidebar-title">
+        <a href="blog/<?php echo $post->getUrlKey(); ?>">
+            <span><?php echo $post->getTitle() ?></span>
+        </a>
+    </div>
+
+    <?php endforeach; ?>
+</div>
+
+
+

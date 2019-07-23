@@ -1,0 +1,18 @@
+<?php
+/** @var $block \SmartOSC\Blog\Block\Post\View */
+$post = $block->getPost();
+if($post != null):
+?>
+<div class="post-view">
+    <div class="post-view-header">
+        <h1 class="post-view-header-title"><?php echo $post->getTitle() ?></h1>
+        <p class="post-view-header-date"><?php echo date('F j, Y', strtotime($post->getCreatedAt())) ?></p>
+    </div>
+    <div class="post-view-featured-image">
+        <img src="<?php echo $block->getMediaUrl().$post->getImage(); ?>" />
+    </div>
+    <div class="post-view-content">
+        <?php echo $post->getContent(); ?>
+    </div>
+</div>
+<?php endif; ?>
