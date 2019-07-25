@@ -7,7 +7,6 @@ use SmartOSC\Blog\Api\Data\CategoryInterface;
 
 class Category extends AbstractBlogModel implements CategoryInterface, IdentityInterface
 {
-
     const STATUS_ENABLED = 1;
     const STATUS_DISABLED = 0;
 
@@ -27,7 +26,6 @@ class Category extends AbstractBlogModel implements CategoryInterface, IdentityI
      * @var string
      */
     protected $_eventPrefix = 'blog_category';
-
 
     /**
      * Initialize resource model

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Block\Adminhtml\Post\Edit;
-
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\Exception\NoSuchEntityException;

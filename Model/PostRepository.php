@@ -109,6 +109,7 @@ class PostRepository implements PostRepositoryInterface
         return $post;
     }
 
+
     /**
      * @param PostInterface $post
      * @return bool

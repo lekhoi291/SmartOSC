@@ -14,5 +14,26 @@ if($post != null):
     <div class="post-view-content">
         <?php echo $post->getContent(); ?>
     </div>
+
+    <div class="blog_product_post_list">
+        <h2>Product Related</h2>
+        <ul class="blog_product_post_list" style="padding: 0 0 0 0;">
+            <?php foreach ($block->getProductIds() as $productId):?>
+            <?php if($productId != ''):
+                    $product = $block->getProductById($productId);
+                    $imgUrl = $this->getItemImage($productId);?>
+            <li class="block-product-posts-item">
+                <a href="<?php echo $product->getProductUrl() ?>">
+                    <img class="product-post-featured-image"
+                         src="<?php echo $imgUrl; ?>"
+                </a><br>
+                <a href="<?php echo $product->getProductUrl() ?>"><?php echo $product->getName() ?></a>
+            </li>
+            <?php endif;?>
+            <?php endforeach;?>
+        </ul>
+    </div>
 </div>
 <?php endif; ?>
+
+

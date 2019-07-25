@@ -13,7 +13,7 @@
         </div>
         <div class="blog-post-item-data">
             <h3 class="blog-post-item-title" style="margin:0 0 10px 0;">
-                <strong><a href="<?php echo $post->getUrlKey(); ?>"><?php echo $post->getTitle() ?></a></strong>
+                <strong><a href="<?php echo $block->getPostUrl($post->getPostId()); ?>"><?php echo $post->getTitle() ?></a></strong>
             </h3>
             <div>
                 <p><?php echo $helper->timeElapsed($post->getCreatedAt()) ?></p>

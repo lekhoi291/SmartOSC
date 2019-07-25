@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Block\Adminhtml\Post\Edit;
-
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 

@@ -63,6 +63,10 @@ class Save extends Action
                 $data['category_ids'] = implode(',', $data['category_ids']);
             }
 
+            if (isset($data['product_ids']) && !empty($data['product_ids']) ) {
+                $data['product_ids'] = implode(',', $data['product_ids']);
+            }
+
             $model = $this->postFactory->create();
 
             $id = $this->getRequest()->getParam('post_id');
@@ -77,6 +81,8 @@ class Save extends Action
             try {
                 $this->postRepository->save($model);
                 $this->messageManager->addSuccessMessage('Blog post has been saved');
+
+                return $resultRedirect->setPath('*/*/');
             } catch (CouldNotSaveException $couldNotSaveException) {
                 $this->messageManager->addExceptionMessage($couldNotSaveException);
             } catch (InputException $inputException) {
@@ -128,7 +134,7 @@ class Save extends Action
                 $this->_logger->critical($e);
             }
         } else {
-            $data['image'] = null;
+            $data['image'] = $this->getUploadedImageName($data);
         }
 
         return $data;

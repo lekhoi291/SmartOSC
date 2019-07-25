@@ -57,6 +57,8 @@ class Save extends Action
             try {
                 $this->categoryRepository->save($model);
                 $this->messageManager->addSuccessMessage('Blog category has been saved');
+
+                return $resultRedirect->setPath('*/*/');
             } catch (CouldNotSaveException $couldNotSaveException) {
                 $this->messageManager->addExceptionMessage($couldNotSaveException);
             } catch (InputException $inputException) {

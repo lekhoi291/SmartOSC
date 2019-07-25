@@ -2,6 +2,8 @@
 
 namespace SmartOSC\Blog\Api\Data;
 
+use Magento\Tests\NamingConvention\true\mixed;
+
 interface PostInterface
 {
     CONST POST_ID = 'post_id';
@@ -9,6 +11,7 @@ interface PostInterface
     CONST TITLE = 'title';
     CONST CONTENT = 'content';
     CONST CATEGORY_IDS = 'category_ids';
+    CONST PRODUCT_IDS = 'product_ids';
     CONST AUTHOR_ID = 'author_id';
     CONST IS_ACTIVE = 'is_active';
     CONST IS_FEATURED = 'is_featured';
@@ -74,6 +77,17 @@ interface PostInterface
      * @return $this
      */
     public function setCategoryIds($category_ids);
+
+    /**
+     * @return int[]|null
+     */
+    public function getProductIds();
+
+    /**
+     * @param int[] $product_ids
+     * @return $this
+     */
+    public function setProductIds($product_ids);
 
     /**
      * @return int

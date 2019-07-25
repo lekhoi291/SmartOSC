@@ -3,6 +3,7 @@
     <update handle="editor"/>
     <head>
         <css src="SmartOSC_Blog::css/tokenize.css"/>
+        <link src="Smart_Bloger::js/chooproduct.js"/>
     </head>
     <body>
         <referenceContainer name="content">

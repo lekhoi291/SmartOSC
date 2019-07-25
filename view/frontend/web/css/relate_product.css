@@ -1,0 +1,22 @@
+
+ul.blog_product_post_list li{
+    float: left;
+    width: 160px;
+    height: 300px;
+    border: .1px solid bisque;
+    padding: 0;
+    text-align: center;
+    margin: 0 3px;
+    list-style: none;
+}
+.image img{
+    width: 600px;
+    height: 300px;
+}
+ul.blog_product_post_list li img{
+    width: 100px;
+    height: 160px;
+}
+ul.blog_product_post_list a{
+    text-decoration: none;
+}

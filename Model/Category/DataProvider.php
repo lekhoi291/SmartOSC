@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Model\Category;
-
 
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Store\Model\StoreManagerInterface;
@@ -10,7 +8,6 @@ use SmartOSC\Blog\Model\ResourceModel\Category\CollectionFactory as CategoryColl
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
-
     /**
      * @var CollectionFactory
      */

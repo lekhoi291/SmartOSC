@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SmartOSC\Blog\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;

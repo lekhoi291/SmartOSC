@@ -2,6 +2,7 @@
 
 namespace SmartOSC\Blog\Model;
 
+use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory as ProductCollectionFactory;
 use Magento\Framework\DataObject\IdentityInterface;
 use SmartOSC\Blog\Api\Data\PostInterface;
 
@@ -128,6 +129,19 @@ class Post extends AbstractBlogModel implements PostInterface, IdentityInterface
     public function setCategoryIds($category_ids)
     {
         $this->setData(self::CATEGORY_IDS, $category_ids);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getProductIds()
+    {
+        return $this->getData(self::PRODUCT_IDS);
+    }
+
+    public function setProductIds($product_ids)
+    {
+        $this->setData(self::PRODUCT_IDS, $product_ids);
     }
 
     /**
@@ -273,7 +287,5 @@ class Post extends AbstractBlogModel implements PostInterface, IdentityInterface
     {
         $this->setData(self::UPDATED_AT, $updated_at);
     }
-
-
 
 }
