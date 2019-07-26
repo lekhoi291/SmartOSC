@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Controller\Adminhtml\Post;
-
 
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;

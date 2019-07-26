@@ -51,7 +51,7 @@ class Topmenu
         return [
             'name' => __('Blog'),
             'id' => 'blog',
-            'url' => 'http://magento.local/blog',
+            'url' => 'http://magento.local/blog?limit=5',
             'has_active' => true,
             'is_active' => true
         ];

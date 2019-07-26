@@ -125,9 +125,9 @@ class PostList extends Template implements IdentityInterface
     }
 
     /**
-     * @param $categoryIds
-     * @return bool
+     * @return \SmartOSC\Blog\Model\ResourceModel\Post\Collection
      */
+
     public function isAsigned($categoryIds){
         $paramCatId = $this->getRequest()->getParam('category');
 
@@ -143,6 +143,49 @@ class PostList extends Template implements IdentityInterface
             return true;
         }
     }
+
+    public function getNews()
+    {
+        //get values of current page
+        $page=($this->getRequest()->getParam('p'))? $this->getRequest()->getParam('p') : 1;
+        //get values of current limit
+        $pageSize=($this->getRequest()->getParam('limit'))? $this->getRequest()->getParam('limit') : 5;
+
+        $collection = $this->collection->create();
+        $collection->setPageSize($pageSize);
+        $collection->setCurPage($page);
+        return $collection;
+    }
+
+
+
+    protected function _prepareLayout()
+    {
+        parent::_prepareLayout();
+        $this->pageConfig->getTitle()->set(__('Blog'));
+
+        if ($this->getNews()) {
+            $pager = $this->getLayout()->createBlock(
+                'Magento\Theme\Block\Html\Pager'
+            )->setAvailableLimit(array(5=>5,10=>10,15=>15))->setShowPerPage(true)->setCollection(
+                $this->getNews()
+            );
+            $this->setChild('pager', $pager);
+            $this->getNews()->load();
+        }
+        return $this;
+    }
+
+    public function getPagerHtml()
+    {
+        return $this->getChildHtml('pager');
+    }
+
+    /**
+     * @param $categoryIds
+     * @return bool
+     */
+
 
     /**
      * get post url

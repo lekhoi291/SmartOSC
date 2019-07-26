@@ -12,6 +12,7 @@ interface PostInterface
     CONST CONTENT = 'content';
     CONST CATEGORY_IDS = 'category_ids';
     CONST PRODUCT_IDS = 'product_ids';
+    CONST TAG_IDS = 'tag_ids';
     CONST AUTHOR_ID = 'author_id';
     CONST IS_ACTIVE = 'is_active';
     CONST IS_FEATURED = 'is_featured';
@@ -88,6 +89,17 @@ interface PostInterface
      * @return $this
      */
     public function setProductIds($product_ids);
+
+    /**
+     * @return int[]|null
+     */
+    public function getTagIds();
+
+    /**
+     * @param int[] $tag_ids
+     * @return $this
+     */
+    public function setTagIds($tag_ids);
 
     /**
      * @return int

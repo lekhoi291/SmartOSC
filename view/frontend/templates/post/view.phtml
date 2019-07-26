@@ -5,7 +5,7 @@ if($post != null):
 ?>
 <div class="post-view">
     <div class="post-view-header">
-        <h1 class="post-view-header-title"><?php echo $post->getTitle() ?></h1>
+        <h2 class="post-view-header-title"><?php echo $post->getTitle() ?></h2>
         <p class="post-view-header-date"><?php echo date('F j, Y', strtotime($post->getCreatedAt())) ?></p>
     </div>
     <div class="post-view-featured-image">
@@ -22,13 +22,15 @@ if($post != null):
             <?php if($productId != ''):
                     $product = $block->getProductById($productId);
                     $imgUrl = $this->getItemImage($productId);?>
-            <li class="block-product-posts-item">
-                <a href="<?php echo $product->getProductUrl() ?>">
-                    <img class="product-post-featured-image"
-                         src="<?php echo $imgUrl; ?>"
-                </a><br>
-                <a href="<?php echo $product->getProductUrl() ?>"><?php echo $product->getName() ?></a>
-            </li>
+                <li class="block-product-posts-item">
+                    <a href="<?php echo $product->getProductUrl() ?>">
+                        <img class="product-post-featured-image"
+                             src="<?php echo $imgUrl; ?>"
+                    </a><br>
+                    <a href="<?php echo $product->getProductUrl() ?>"><?php echo $product->getName() ?></a>
+                </li>
+                <?php else:?>
+                <p>There are no related product to this post</p>
             <?php endif;?>
             <?php endforeach;?>
         </ul>

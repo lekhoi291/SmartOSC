@@ -79,4 +79,8 @@ class Featured extends Template implements IdentityInterface
         return $mediaUrl;
     }
 
+    public function getPostUrl($postId){
+        return $this->getUrl('blog/post/view', ['post' => $postId]);
+    }
+
 }

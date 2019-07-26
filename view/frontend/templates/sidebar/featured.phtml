@@ -1,5 +1,7 @@
 <?php
 /** @var $block \SmartOSC\Blog\Block\Post\Featured */ ?>
+<?php
+/** @var $block \SmartOSC\Blog\Block\Post\PostList */ ?>
 
 <div class="featured-post-sidebar">
     <div class="featured-post-sidebar-title">
@@ -7,15 +9,16 @@
     </div>
 
     <?php /** @var \SmartOSC\Blog\Model\Post $post */ ?>
+    <?php /** @var $post \SmartOSC\Blog\Api\Data\PostInterface */ ?>
     <?php foreach ($block->getFeaturedPost() as $post): ?>
 
     <div class="featured-sidebar-image">
-        <a href="<?php echo $post->getUrlKey(); ?>">
+        <a href="<?php echo $block->getPostUrl($post->getPostId() ); ?>">
             <img src="<?php echo $block->getMediaUrl().$post->getImage(); ?>" />
         </a>
     </div>
     <div class="featured-sidebar-title">
-        <a href="blog/<?php echo $post->getUrlKey(); ?>">
+        <a href="<?php echo $block->getPostUrl($post->getPostId() ); ?>">
             <span><?php echo $post->getTitle() ?></span>
         </a>
     </div>

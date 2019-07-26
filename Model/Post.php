@@ -147,6 +147,19 @@ class Post extends AbstractBlogModel implements PostInterface, IdentityInterface
     /**
      * @inheritdoc
      */
+    public function getTagIds()
+    {
+        return $this->getData(self::TAG_IDS);
+    }
+
+    public function setTagIds($tag_ids)
+    {
+        $this->setData(self::TAG_IDS, $tag_ids);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function getAuthorId()
     {
         return $this->getData(self::AUTHOR_ID);

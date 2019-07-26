@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Model\ResourceModel\Post;
-
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 

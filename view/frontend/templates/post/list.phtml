@@ -2,28 +2,30 @@
 /** @var $block \SmartOSC\Blog\Block\Post\PostList */ ?>
 <?php $helper = $block->getHelperData() ?>
 
-<div class="blog-post-item">
+
     <?php /** @var $post \SmartOSC\Blog\Api\Data\PostInterface */ ?>
-    <?php foreach ($block->getAllPostList() as $post): ?>
-    <?php if($block->isAsigned($post->getCategoryIds())):?>
-        <div class="blog-post-item-image">
-            <a href="<?php echo $block->getPostUrl($post->getPostId()); ?>">
-                <img src="<?php echo $block->getMediaUrl().$post->getImage(); ?>" />
-            </a>
-        </div>
-        <div class="blog-post-item-data">
-            <h3 class="blog-post-item-title" style="margin:0 0 10px 0;">
-                <strong><a href="<?php echo $block->getPostUrl($post->getPostId()); ?>"><?php echo $post->getTitle() ?></a></strong>
-            </h3>
-            <div>
-                <p><?php echo $helper->timeElapsed($post->getCreatedAt()) ?></p>
+        <?php foreach ($block->getNews() as $post): ?>
+        <?php if($block->isAsigned($post->getCategoryIds())):?>
+        <div class="blog-post-item">
+            <div class="blog-post-item-content">
+                <div class="blog-post-item-image">
+                    <a href="<?php echo $block->getPostUrl($post->getPostId()); ?>">
+                        <img src="<?php echo $block->getMediaUrl().$post->getImage(); ?>" />
+                    </a>
+                </div>
+                <div class="blog-post-item-data">
+                    <h3 class="blog-post-item-title" style="margin:10px 0 10px 0;">
+                        <strong><a href="<?php echo $block->getPostUrl($post->getPostId()); ?>"><?php echo $post->getTitle() ?></a></strong>
+                    </h3>
+                    <div>
+                        <p><?php echo $helper->timeElapsed($post->getCreatedAt()) ?></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr>
-    <?php endif; ?>
-    <?php endforeach; ?>
-</div>
-<!--<div class="pagination">-->
-<!--    <button type="button">Older Post</button>-->
-<!--    <button type="button">Newer Post</button>-->
-<!--</div>-->
+        <?php endif; ?>
+        <?php endforeach; ?>
+
+<?php if ($block->getPagerHtml()): ?>
+    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif ?>

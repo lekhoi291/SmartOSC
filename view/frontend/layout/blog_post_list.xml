@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="SmartOSC_Blog::css/blog_post.css" />
+    </head>
     <body>
         <referenceContainer name="content">
             <block class="SmartOSC\Blog\Block\Post\PostList" name="blog.list" template="SmartOSC_Blog::post/list.phtml" />
