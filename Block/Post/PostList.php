@@ -7,7 +7,6 @@ use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Api\SortOrderBuilder;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\View\Element\Template;
-//use Magento\Tests\NamingConvention\true\false;
 use SmartOSC\Blog\Api\PostRepositoryInterface;
 use SmartOSC\Blog\Helper\Data as BlogHelperData;
 use SmartOSC\Blog\Model\Post;

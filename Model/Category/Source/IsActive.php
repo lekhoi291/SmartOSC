@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Model\Category\Source;
-
 
 use Magento\Framework\Data\OptionSourceInterface;
 use SmartOSC\Blog\Model\Category;

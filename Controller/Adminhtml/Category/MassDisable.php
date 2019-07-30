@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Controller\Adminhtml\Category;
-
 
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;
@@ -12,7 +10,6 @@ use SmartOSC\Blog\Model\ResourceModel\Category\CollectionFactory;
 
 class MassDisable extends Action
 {
-
     /**
      * @var Filter
      */
@@ -49,7 +46,6 @@ class MassDisable extends Action
      */
     public function execute()
     {
-
         $collection = $this->filter->getCollection($this->collectionFactory->create());
 
         foreach ($collection as $item) {

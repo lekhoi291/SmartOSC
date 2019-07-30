@@ -1,8 +1,4 @@
 <?php
-/**
- * Copyright 2018 aheadWorks. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
 namespace SmartOSC\Blog\Model\Category\Source;
 

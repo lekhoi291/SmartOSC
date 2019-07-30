@@ -63,7 +63,6 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
      */
     public function getData()
     {
-
         if (isset($this->loadedData)) {
             return $this->loadedData;
         }

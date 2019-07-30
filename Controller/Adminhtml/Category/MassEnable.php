@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Controller\Adminhtml\Category;
-
 
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;
@@ -49,7 +47,6 @@ class MassEnable extends Action
      */
     public function execute()
     {
-
         $collection = $this->filter->getCollection($this->collectionFactory->create());
 
         foreach ($collection as $item) {

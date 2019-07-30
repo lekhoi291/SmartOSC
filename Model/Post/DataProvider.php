@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SmartOSC\Blog\Model\Post;
 
 use Magento\Framework\App\Request\DataPersistorInterface;

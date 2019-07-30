@@ -17,7 +17,7 @@ class Post extends AbstractBlogModel implements PostInterface, IdentityInterface
     const CACHE_TAG = 'blog_post';
 
     /**
-     * @var string
+     * @var string`
      */
     protected $_cacheTag = 'blog_post';
 

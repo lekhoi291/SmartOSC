@@ -1,8 +1,6 @@
 <?php
 
-
 namespace SmartOSC\Blog\Controller\Adminhtml\Category;
-
 
 use Magento\Backend\App\Action;
 use Magento\Backend\Model\View\Result\ForwardFactory;
